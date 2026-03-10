@@ -1,7 +1,16 @@
-package com.example.SupplyFlow.produit;
+package com.example.SupplyFlow.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Produit {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private  String nom;
     private String categorie;
     private double prix;
@@ -9,7 +18,7 @@ public class Produit {
 
     public Produit(){}
 
-    public Produit(int id, String nom, String categorie, double prix, int quantite) {
+    public Produit(Long id, String nom, String categorie, double prix, int quantite) {
         this.id = id;
         this.nom = nom;
         this.categorie = categorie;
@@ -23,11 +32,11 @@ public class Produit {
         this.quantite = quantite;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

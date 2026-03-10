@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products</title>
+</head>
+
+<body>
+
+<h2>Liste des Produits</h2>
+
+<a href="/add-product">Ajouter Produit</a>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="p : ${products}">
+
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nom}"></td>
+        <td th:text="${p.categorie}"></td>
+        <td th:text="${p.prix}"></td>
+        <td th:text="${p.quantite}"></td>
+
+        <td>
+            <a th:href="@{/edit-product/{id}(id=${p.id})}">Edit</a>
+            <a th:href="@{/delete-product/{id}(id=${p.id})}">Delete</a>
+        </td>
+
+    </tr>
+
+</table>
+
+
+
+<h2>Liste des fourniseur</h2>
+
+<a href="/add-fourniseur">Ajouter un forniseur</a>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Ville</th>
+        <th>Telephone</th>
+    </tr>
+
+    <tr th:each="f : ${fourniseurs}">
+
+        <td th:text="${f.id}"></td>
+        <td th:text="${f.nom}"></td>
+        <td th:text="${f.ville}"></td>
+        <td th:text="${f.telephone}"></td>
+
+<!--        <td>-->
+<!--            <a th:href="@{/edit-fourniseur/{id}(id=${f.id})}">Edit</a>-->
+<!--            <a th:href="@{/delete-fourniseur/{id}(id=${f.id})}">Delete</a>-->
+<!--        </td>-->
+
+    </tr>
+
+</table>
+
+</body>
+</html>

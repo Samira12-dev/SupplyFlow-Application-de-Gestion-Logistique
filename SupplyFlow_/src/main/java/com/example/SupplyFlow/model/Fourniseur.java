@@ -1,14 +1,23 @@
-package com.example.SupplyFlow.fourniseur;
+package com.example.SupplyFlow.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Fourniseur {
-    private  int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private  Long id;
     private  String nom;
     private String ville;
     private String telephone;
 
     public Fourniseur(){}
 
-    public Fourniseur(int id, String nom, String telephone, String ville) {
+    public Fourniseur(Long id, String nom, String telephone, String ville) {
         this.id = id;
         this.nom = nom;
         this.telephone = telephone;
@@ -21,11 +30,11 @@ public class Fourniseur {
         this.telephone = telephone;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

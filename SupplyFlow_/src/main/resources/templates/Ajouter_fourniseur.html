@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<h2>Ajouter fourniseur</h2>
+
+<form th:action="@{/save_fourniseur}" method="post" th:object="${fourniseur}">
+
+    Name
+    <input type="text" th:field="*{nom}"/>
+
+    Ville
+    <input type="text" th:field="*{ville}"/>
+
+    Telephone
+    <input type="number" th:field="*{telephone}"/>
+
+    <button type="submit">Save</button>
+
+</form>
+
+</body>
+</html>

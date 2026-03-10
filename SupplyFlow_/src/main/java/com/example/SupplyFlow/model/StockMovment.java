@@ -1,16 +1,25 @@
-package com.example.SupplyFlow.stockMovment;
+package com.example.SupplyFlow.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 
+@Entity
 public class StockMovment {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
     private String type;
     private int quantite;
     private LocalDate datee;
 
     public StockMovment(){}
 
-    public StockMovment(int id, String type, int quantite, LocalDate datee) {
+    public StockMovment(Long id, String type, int quantite, LocalDate datee) {
         this.id = id;
         this.type = type;
         this.quantite = quantite;
@@ -22,11 +31,11 @@ public class StockMovment {
         this.datee = datee;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
