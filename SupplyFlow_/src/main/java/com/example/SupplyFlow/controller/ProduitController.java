@@ -3,6 +3,7 @@ package com.example.SupplyFlow.controller;
 import com.example.SupplyFlow.model.Produit;
 import com.example.SupplyFlow.service.FourniseurService;
 import com.example.SupplyFlow.service.ProduitService;
+import com.example.SupplyFlow.service.StockMovementService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,18 +16,22 @@ public class ProduitController {
 
     private final ProduitService produitService;
     private final FourniseurService fourniseurService;
+    private StockMovementService stockMovementService;
 
 
-    public ProduitController(ProduitService produitService, FourniseurService fourniseurService){
+    public ProduitController(ProduitService produitService,
+                             FourniseurService fourniseurService,
+                             StockMovementService stockMovementService){
         this.produitService = produitService;
         this.fourniseurService=fourniseurService;
+        this.stockMovementService=stockMovementService;
     }
 
     @GetMapping("/products")
     public String listProducts(Model model){
         model.addAttribute("products", produitService.getAllProduit());
         model.addAttribute("fourniseurs", fourniseurService.getAllFourniseur());
-
+        model.addAttribute("movements",stockMovementService.getAllMovement());
         return "products";
     }
 

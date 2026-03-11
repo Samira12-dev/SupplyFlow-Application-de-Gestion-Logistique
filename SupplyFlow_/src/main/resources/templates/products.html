@@ -69,5 +69,31 @@
 
 </table>
 
+<h2>Stock Movements</h2>
+
+<a href="/add-movement">Ajouter mouvement</a>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Produit</th>
+        <th>Type</th>
+        <th>Quantité</th>
+        <th>Date</th>
+    </tr>
+
+    <tr th:each="m : ${movements}">
+
+        <td th:text="${m.id}"></td>
+        <td th:text="${m.produit.nom}"></td>
+        <td th:text="${m.type}"></td>
+        <td th:text="${m.quantite}"></td>
+        <td th:text="${m.datee}"></td>
+
+    </tr>
+
+</table>
+
 </body>
 </html>

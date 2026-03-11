@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Ajouter Mouvement Stock</h2>
+
+<form th:action="@{/save-movement}" method="post" th:object="${movement}">
+
+    Produit
+    <select th:field="*{produit}">
+        <option th:each="p : ${products}"
+                th:value="${p.id}"
+                th:text="${p.nom}">
+        </option>
+    </select>
+
+    Type
+    <select th:field="*{type}">
+        <option value="ENTREE">ENTREE</option>
+        <option value="SORTIE">SORTIE</option>
+    </select>
+
+    Quantité
+    <input type="number" th:field="*{quantite}">
+
+    <button type="submit">Save</button>
+
+</form>
+
+</body>
+</html>
