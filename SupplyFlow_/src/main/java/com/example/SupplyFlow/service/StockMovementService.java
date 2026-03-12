@@ -12,27 +12,25 @@ import java.util.List;
 public class StockMovementService {
     private final StockMovementRepo movementRepo;
     private  final ProduitRepository produitRepository;
+    public StockMovementService(StockMovementRepo movementRepo,  ProduitRepository produitRepository){
+        this.movementRepo= movementRepo;
+        this.produitRepository =produitRepository;
 
-    public StockMovementService(StockMovementRepo movementRepo,
-                                ProduitRepository produitRepository){
-        this.movementRepo=movementRepo;
-        this.produitRepository=produitRepository;
     }
 
-    public void saveMovement(StockMovement movement){
-        Produit pr= movement.getProduit();
-        if(movement.getType().equalsIgnoreCase("ENTREE")){
-            pr.setQuantite(pr.getQuantite() + movement.getQuantite());
+    public void saveMovement (StockMovement movement){
+        Produit produit = movement.getProduit();
+        if(movement.getType().equalsIgnoreCase("Entree")){
+            produit.setQuantite(produit.getQuantite() + movement.getQuantite());
+        }else if(movement.getType().equalsIgnoreCase("SORTIE")){
+            produit.setQuantite(produit.getQuantite() - movement.getQuantite());
         }
-       else if(movement.getType().equalsIgnoreCase("SORTIE")){
-            pr.setQuantite(pr.getQuantite() - movement.getQuantite());
-        }
-
-        produitRepository.save(pr);
+        produitRepository.save(produit);
         movement.setDatee(LocalDate.now());
         movementRepo.save(movement);
     }
-    public List<StockMovement> getAllMovement(){
+    public List<StockMovement> getListALlMovement(){
         return movementRepo.findAll();
     }
 }
+

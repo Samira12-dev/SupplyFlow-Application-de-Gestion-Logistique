@@ -23,7 +23,7 @@ public class StockMovementController {
 
     @GetMapping("/movements")
     public String listMovement(Model model){
-        model.addAttribute("movements",stockservice.getAllMovement());
+        model.addAttribute("movements",stockservice.getListALlMovement());
         return "movements";
     }
     @GetMapping("/add-movement")

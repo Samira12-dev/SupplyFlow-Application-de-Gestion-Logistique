@@ -1,0 +1,120 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    margin: 40px;
+}
+
+/* Titles */
+h2{
+    color: #2c3e50;
+    margin-top: 40px;
+}
+
+/* Buttons / links */
+a{
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 10px 0;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+a:hover{
+    background-color: #2980b9;
+}
+
+/* Table design */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+/* Table header */
+th{
+    background-color: #34495e;
+    color: white;
+    padding: 10px;
+}
+
+/* Table cells */
+td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Row hover */
+tr:hover{
+    background-color: #f1f1f1;
+}
+
+/* Action links */
+td a{
+    background-color: #27ae60;
+    margin: 3px;
+}
+
+td a:last-child{
+    background-color: #e74c3c;
+}
+
+td a:hover{
+    opacity: 0.8;
+}
+
+
+
+/* container */
+.container{
+    width:400px;
+    margin:60px auto;
+    background:white;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* title */
+h2{
+    text-align:center;
+    color:#2c3e50;
+    margin-bottom:20px;
+}
+
+/* labels */
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* inputs */
+input, select{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+
+/* button */
+button{
+    margin-top:15px;
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#3498db;
+    color:white;
+    font-size:15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2980b9;
+}

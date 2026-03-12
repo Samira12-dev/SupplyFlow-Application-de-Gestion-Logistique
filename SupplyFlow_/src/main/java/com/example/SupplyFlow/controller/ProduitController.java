@@ -31,7 +31,7 @@ public class ProduitController {
     public String listProducts(Model model){
         model.addAttribute("products", produitService.getAllProduit());
         model.addAttribute("fourniseurs", fourniseurService.getAllFourniseur());
-        model.addAttribute("movements",stockMovementService.getAllMovement());
+        model.addAttribute("movements",stockMovementService.getListALlMovement());
         return "products";
     }
 
