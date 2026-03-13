@@ -29,7 +29,6 @@ public class ProduitService {
         produitRepository.deleteById(id);
     }
 
-
     public void updateProduit(Long id, Produit updateProduit){
         Produit existingProduit= produitRepository.findById(id).orElseThrow(()->
                 new RuntimeException("Produit not found"));

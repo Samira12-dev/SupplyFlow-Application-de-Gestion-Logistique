@@ -17,12 +17,15 @@ public class FourniseurService {
    public List<Fourniseur> getAllFourniseur(){
        return fourniseurRepository.findAll();
    }
+
    public void saveFourniseur(Fourniseur fourniseur){
        fourniseurRepository.save(fourniseur);
    }
+
    public Fourniseur getFourniseurById(Long id){
        return fourniseurRepository.findById(id).orElse(null);
    }
+
    public void deleteFourniseur(Long id){
        fourniseurRepository.deleteById(id);
    }
